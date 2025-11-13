@@ -1,1 +1,662 @@
+/* リセットと基本スタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+:root {
+    --mainColor: #A5F23A;
+    --baseColor: #F2F2F2;
+    --fontColor: #333;
+}
+
+body {
+    font-family: 
+    "ヒラギノ角ゴ ProN", 
+    "Hiragino Kaku Gothic ProN", 
+    Meiryo, 
+    sans-serif;
+    background-color: var(--baseColor);
+}
+
+section {
+    margin-bottom: clamp(6.5rem, 5.0437rem + 6.2136vw, 12.5rem);
+}
+
+a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+h2 {
+    display: block;
+    text-align: center;
+    margin-block: 48px;
+    font-weight: bold;
+    font-size: clamp(1.5rem, 1.1359rem + 1.5534vw, 3rem);
+    color: var(--fontColor);
+}
+
+
+/* ------------------------------------- */
+/* ヘッダーとナビゲーションメニュー */
+/* ------------------------------------- */
+
+.header {
+    position: fixed;
+    top: 1.5625vw;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 6.25vw;
+    z-index: 100;
+}
+
+.logo img {
+    width: 13.177vw;
+    max-width: 254px;
+}
+
+/* ハンバーガーアイコン */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 72px;
+    height: 72px;
+    background: var(--mainColor);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 200;
+    padding: 28px 24px;
+    border-radius: 50px;
+}
+
+.line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--fontColor);
+    transition: all 0.3s ease;
+}
+
+/* ------------------------------------- */
+/* メニューが開いたとき (activeクラスがついたとき) のアイコンの変形 */
+/* ------------------------------------- */
+
+/* 1本目: 下へ移動し、時計回り45度回転 */
+.hamburger-menu.active .line:nth-child(1) {
+    /* 線の高さ3pxと間のスペースを考慮し、中央に移動する距離 (24px - 3px) / 2 = 10.5px */
+    transform: translateY(7.5px) rotate(45deg);
+}
+
+/* 2本目: 上へ移動し、反時計回り45度回転 */
+.hamburger-menu.active .line:nth-child(2) {
+    /* 1本目と同じ距離だけ上に移動 */
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+/* ナビゲーションメニュー */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; 
+    width: 300px;
+    height: 100vh;
+    background-color: var(--mainColor);
+    padding-top: 60px;
+    transition: right 0.4s ease-in-out;
+    z-index: 150;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu.active {
+    right: 0;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.nav-menu ul li {
+    font-weight: bold;
+}
+
+.nav-menu ul li button {
+    width: 100%;
+    border: none;
+    background: #333;
+    padding-block: 18px;
+}
+
+.nav-menu ul li button a {
+    color: var(--baseColor);
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--fontColor);
+    font-size: 1.1rem;
+    display: block;
+    padding: 5px 0;
+}
+
+/* メインコンテンツ (開閉時の背景効果用) */
+.content {
+    min-height: calc(100vh - 60px);
+    padding: 20px;
+    background-color: #f4f4f4;
+    transition: all 0.4s ease-in-out;
+}
+
+.content.active {
+    pointer-events: none;
+}
+
+
+
+/* ------------------------------------- */
+/* メインビジュアル */
+/* ------------------------------------- */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 32px;
+    margin-inline: 6.25vw;
+}
+    
+/* grid-items1 */
+.grid-items1 {
+    grid-column: span 5 / span 5;
+    grid-column-start: 2;
+}
+
+.main-visual-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.main-visual-image img {
+    width: 100%;
+}
+
+/* grid-items2 */
+
+.grid-items2 {
+    grid-column: span 4 / span 4;
+    grid-column-start: 8;
+}
+
+.main-visual-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 40px;
+}
+
+.main-visual-text h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0.25rem, 0.1286rem + 0.5178vw, 0.75rem);
+    font-size: clamp(1rem, 0.5146rem + 2.0712vw, 3rem);
+}
+
+.cross {
+    width: clamp(1rem, 0.7573rem + 1.0356vw, 2rem);
+}
+
+.main-visual-text {
+    font-size: clamp(0.8125rem, 0.6456rem + 0.712vw, 1.5rem);
+    text-align: justify;
+}
+
+
+.main-visual-text .primary-button {
+    width: 100%;
+    background-color: var(--mainColor);
+    padding-block: 16px;
+}
+
+/* grid-items3 */
+
+.grid-items3 {
+    grid-column: span 12 / span 12;
+    grid-row-start: 2;
+    margin-top: -10vh;
+    position: relative;
+}
+
+.grid-items3 video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: gray;
+}
+
+.message {
+    width: 38.85vw;
+    position: absolute;
+    right: -1%;
+    bottom: -5%;
+}
+
+
+
+/* ------------------------------------- */
+/* 福祉業界の課題 */
+/* ------------------------------------- */
+
+#social-issue {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+.issue-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--fontColor);
+}
+
+.issue-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-top: 3px solid var(--fontColor);
+}
+
+.issue-image {
+    width: calc(100% / 2);
+    border-right: 3px solid var(--fontColor);
+}
+
+.issue-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.issue-text {
+    display: grid;
+    place-items: center;
+    width: calc(100% / 2);
+    padding: 3.43vw 3.95vw;
+    line-height: 180%;
+    letter-spacing: 0.08em;
+    text-align: justify;
+}
+
+
+
+/* ------------------------------------- */
+/* リモート支援の導入 */
+/* ------------------------------------- */
+
+#implementation-support {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#implementation-support h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+.support-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+    background-image: url("/assets/images/remote-support.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 180px;
+}
+
+.support-image h3 {
+    position: absolute;
+    bottom: 17.18vw;
+    left: 7.18vw;
+    font-size: clamp(1.5rem, 1.1359rem + 1.5534vw, 3rem);
+    font-weight: bold;
+    line-height: 160%;
+}
+
+.support-image p {
+    width: 26.56vw;
+    position: absolute;
+    top: 10.32vw;
+    right: 3.125vw;
+    font-size: clamp(0.8125rem, 0.7063rem + 0.4531vw, 1.25rem);
+    line-height: 160%;
+}
+
+.support-image img {
+    display: none;
+}
+
+.features-list {
+    position: absolute;
+    right: 3.125vw;
+    bottom: 4.58vw;
+    width: 26.56vw;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 0.6893rem + 0.2589vw, 1rem);
+}
+
+.features-list li {
+    background-color: #E6FFC2;
+    padding: 15px;
+    font-size: clamp(1rem, 0.8786rem + 0.5178vw, 1.5rem);
+    line-height: 160%;
+    list-style: none;
+}
+
+.features-list li:nth-of-type(2) {
+    background-color: #D4FF99;
+}
+
+.features-list li:last-of-type {
+    background-color: var(--mainColor);
+}
+
+.current-situation {
+    display: flex;
+}
+
+.current-situation h3 {
+    width: calc(100% - 60%);
+    font-size: clamp(1.5rem, 1.1359rem + 1.5534vw, 3rem);
+    font-weight: bold;
+    margin-left: 7.39vw;
+    letter-spacing: 0.08em;
+}
+
+.current-situation span {
+    font-size: clamp(1.5rem, 1.1359rem + 1.5534vw, 3rem);
+    font-weight: bold;
+    position: relative;
+}
+
+.current-situation span::before {
+    content: "";
+    display: inline-block;
+    height: 1.666vw;
+    width: 252px;
+    background-color: var(--mainColor);
+    position: absolute;
+    bottom: 0;
+    z-index: -10;
+}
+
+.current-situation p {
+    width: calc(100% - 40%);
+    font-size: clamp(0.8125rem, 0.6456rem + 0.712vw, 1.5rem);
+    line-height: 180%;
+    text-align: justify;
+}
+
+
+
+/* ------------------------------------- */
+/* 弊社サービスのメリット */
+/* ------------------------------------- */
+
+#service-merit {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#service-merit h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+    margin-bottom: 0;
+}
+
+.merit-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 3px solid var(--fontColor);
+    border-top: none;
+}
+
+.merit-item {
+    text-align: center;
+    list-style: none;
+}
+
+.merit-item:first-of-type {
+    border-bottom: 3px solid var(--fontColor);
+}
+
+.merit-item:nth-of-type(2),
+.merit-item:nth-of-type(3){
+    border-bottom: 3px solid var(--fontColor);
+    border-left: 3px solid var(--fontColor);
+}
+
+.merit-item:nth-of-type(5),
+.merit-item:nth-of-type(6){
+    border-left: 3px solid var(--fontColor);
+}
+
+.merit-item img {
+    margin-block: 3.68vw 2.91vw;
+}
+
+.merit-text {
+    display: flex;
+    border-top: 3px solid var(--fontColor);
+}
+
+.merit-text:nth-of-type(n+3) {
+    border-bottom: 3px solid var(--fontColor);
+}
+
+.merit-text span {
+    font-weight: bold;
+    font-size: clamp(1.5rem, 1.3786rem + 0.5178vw, 2rem);
+    border-right: 3px solid var(--fontColor);
+    padding: 10px;
+}
+
+.merit-text h3 {
+    width: calc(100% - 10%);
+    font-size: clamp(1rem, 0.8786rem + 0.5178vw, 1.5rem);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-button {
+    border: 3px solid var(--fontColor);
+    border-top: none;
+    background-color: var(--mainColor);
+    width: 100%;
+    padding-block: 96px;
+}
+
+.primary-button a {
+    font-size: clamp(1rem, 0.7573rem + 1.0356vw, 2rem);
+}
+
+
+
+/* ------------------------------------- */
+/* 効果・実績 */
+/* ------------------------------------- */
+
+#results-section {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#results-section h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+.results-list {
+    display: block;
+    margin-bottom: clamp(3.5rem, 3.3786rem + 0.5178vw, 4rem);
+}
+
+.results-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 24px;
+}
+
+.results-item:last-of-type {
+    margin-bottom: 0;
+}
+
+.results-image {
+    width: 35.41vw;
+    height: 34.16vw;
+}
+
+.results-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.results-text {
+    width: 52.08vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 0.568rem + 0.7767vw, 1.5rem);
+    padding-inline: 5vw;
+}
+
+.results-text h3 {
+    font-size: clamp(1rem, 0.8786rem + 0.5178vw, 1.5rem);
+    font-weight: bold;
+}
+
+.results-text p {
+    font-size: clamp(0.8125rem, 0.6456rem + 0.712vw, 1.5rem);
+    letter-spacing: 0.08em;
+}
+
+#results-section .primary-button {
+    border-top: 3px solid var(--fontColor);
+}
+
+
+
+/* ------------------------------------- */
+/* 利用者・支援員の声 */
+/* ------------------------------------- */
+
+#voice {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#voice h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+/* スライダー */
+.test__container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    }
+    
+.test-slick {
+    width: 100%;
+    display: flex;
+    gap: 4.375vw;
+}
+    
+.test-slick__item {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding: 10px;
+    background-color: pink;
+}
+    
+.test-slick__item .img img {
+    height: auto;
+    width: 100%;
+}
+    
+.slick-prev:before, .slick-next:before {
+    color: #000066;
+}
+
+.slick-track {
+    display: flex;
+}
+.slick-slide {
+    height: auto !important;
+}
+
+
+
+
+/* ------------------------------------- */
+/* アコーディオン */
+/* ------------------------------------- */
+
+.acd-check{
+    display: none;
+}
+.acd-label{
+    background: #32b988;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 1px;
+    padding: 10px;
+    position: relative;
+}
+.acd-label:after{
+    background: #32b988;
+    box-sizing: border-box;
+    content: '+';
+    display: block;
+    font-family: "Font Awesome 5 Free";
+    height: 44px;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+.acd-content{
+    display: block;
+    height: 0;
+    opacity: 0;
+    padding: 0 10px;
+    transition: .5s;
+    visibility: hidden;
+}
+.acd-check:checked + .acd-label:after{
+    content: '-';
+}
+.acd-check:checked + .acd-label + .acd-content{
+    height: auto;
+    opacity: 1;
+    padding: 10px;
+    visibility: visible;
+}
+.acd-content p{
+  margin:0;
+}
