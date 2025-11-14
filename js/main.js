@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 $(function () {
     $(".test-slick").slick({
         autoplay: true, 
-        slidesToShow: 3,
+        slidesToShow: 2,
+        speeds: 6000,
     });
 });

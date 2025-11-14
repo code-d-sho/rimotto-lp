@@ -572,49 +572,358 @@ h2 {
 #voice h2 {
     border: 3px solid var(--fontColor);
     padding-block: 48px;
+    margin-bottom: 0;
+    border-bottom: none;
 }
 
 /* スライダー */
-.test__container {
-    padding-top: 30px;
-    padding-bottom: 30px;
-    }
-    
+
 .test-slick {
     width: 100%;
     display: flex;
-    gap: 4.375vw;
+    padding: 7.55vw 0;
+    border: 3px solid var(--fontColor);
 }
-    
+
+/* voice cards */
 .test-slick__item {
-    margin-right: 5px;
-    margin-left: 5px;
-    padding: 10px;
-    background-color: pink;
+    width: 382px!important;
+    height: 400px!important;
+    padding: 20px;
+    border: 3px solid var(--fontColor);
 }
-    
-.test-slick__item .img img {
-    height: auto;
-    width: 100%;
+
+/* arrow */
+.slick-prev, .slick-next {
+    width: 0;
+    height: 100%;
 }
-    
+
+.slick-prev {
+    left: 0;
+    z-index: 10;
+}
+
+.slick-prev::before {
+    right: 5.781vw;
+    content: url("/assets/images/arrow-prev.svg");
+}
+
+.slick-next {
+    right: 5.781vw;
+}
+
+.slick-next::before {
+    right: 5.781vw;
+    content: url("/assets/images/arrow.svg");
+}
+
 .slick-prev:before, .slick-next:before {
-    color: #000066;
+    display: block;
+    height: 100%;
+    color: var(--baseColor);
+    opacity: 1;
+    
+}
+
+.slick-prev:before, .slick-next:before {
+    width: 5.781vw;
+    line-height: 0; /* height: 100%と併用するためにリセット */
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
+    background-color: var(--fontColor);
 }
 
 .slick-track {
     display: flex;
+    gap: 4.375vw;
 }
+
 .slick-slide {
-    height: auto !important;
+    height: 400px!important;
+}
+
+/* cards inner  */
+.test-slick__item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.txt {
+    text-align: justify;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 160%;
 }
 
 
 
+/* ------------------------------------- */
+/* プランのご紹介 */
+/* ------------------------------------- */
+
+#plans {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#plans h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+#plans h3 {
+    text-align: center;
+    font-size: clamp(1rem, 0.757rem + 1.04vw, 2rem);
+    font-weight: bold;
+    margin-bottom: 6.875vw;
+}
+
+/* 人材採用プランリスト */
+
+.plans-list-recruit {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.656vw;
+    margin-inline: 5.72vw;
+    margin-bottom: 6.875vw;
+}
+
+.plans-list-recruit .plans-item {
+    width: 22.08vw;
+    max-width: 424px;
+    min-width: 347px;
+    border: 3px solid var(--fontColor);
+    padding: 64px 24px 40px;
+    list-style: none;
+    text-align: center;
+}
+
+.plans-list-recruit .plans-item:nth-of-type(2) {
+    transform: scale(1.2);
+    border: 3px solid #9BEC29;
+    box-shadow: 3px 3px 15px rgb(155, 236, 41, 0.2);
+}
+
+.plans-list-recruit .plans-item:last-of-type {
+    border: 3px solid #F57BFB;
+    box-shadow: 3px 3px 15px rgb(244, 121, 251, 0.2);
+}
+
+.plans-list-recruit .plans-item h4 {
+    font-size: clamp(1.25rem, 1.189rem + 0.26vw, 1.5rem);
+    margin-bottom: 24px;
+}
+
+.plans-list-recruit .plans-item:nth-of-type(2) h4 {
+    color: #71B610;
+}
+
+.plans-list-recruit .plans-item:last-of-type h4 {
+    color: #A013AA;
+}
+
+.plan-features {
+    display: block;
+    text-align: left;
+    list-style: none;
+}
+
+.plan-features li {
+    font-size: clamp(0.813rem, 0.646rem + 0.71vw, 1.5rem);
+    margin-bottom: 12px;
+}
+
+.plans-list-recruit .recommend {
+    font-size: clamp(1rem, 0.818rem + 0.78vw, 1.75rem);
+    font-weight: bold;
+    background-color: var(--mainColor);
+    padding-block: clamp(1rem, 0.757rem + 1.04vw, 2rem);
+    text-align: center;
+    margin-block: 72px;
+}
+
+.plans-list-recruit .recommend-recruit {
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    font-weight: bold;
+    text-align: center;
+    line-height: 180%;
+    margin-top: 24px;
+}
+
+.plan-point {
+    width: 57.81vw;
+    margin-top: 3.75vw;
+    margin: 72px auto 160px;
+}
+
+.plan-point h4 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 1.25vw;
+}
+
+.plan-point p {
+    font-size: clamp(0.75rem, 0.568rem + 0.78vw, 1.5rem);
+    border: 3px solid var(--fontColor);
+    padding: 2.08vw 1.25vw;
+    text-align: justify;
+}
+
+/* リモート導入支援プランリスト */
+
+.plans-list-remote {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.656vw;
+    margin-inline: 5.72vw;
+    margin-bottom: 6.875vw;
+}
+
+.plans-list-remote .plans-item {
+    width: calc(100% / 3);
+    max-width: 424px;
+    border: 3px solid var(--fontColor);
+    padding: 64px 24px 40px;
+    list-style: none;
+    text-align: center;
+}
+
+.plans-list-remote .plans-item:nth-of-type(2) {
+    border: 3px solid #71B610;
+    box-shadow: 3px 3px 15px rgb(155, 236, 41, 0.2);
+}
+
+.plans-list-remote .plans-item:last-of-type {
+    border: 3px solid #077687;
+    box-shadow: 3px 3px 15px rgb(94, 193, 255, 0.2);
+}
+
+.plans-item-title {
+    height: 164px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 0.9375vw 1.9791vw ;
+    border-bottom: 3px solid var(--fontColor);
+    margin-bottom: 24px;
+}
+
+.plans-item-title:nth-of-type(2) {
+    border-bottom: 3px solid #71B610;
+}
+
+.plans-item-title:last-of-type {
+    border-bottom: 3px solid #077687;
+}
+
+.plans-item-title h4 {
+    font-size: clamp(1.25rem, 1.189rem + 0.26vw, 1.5rem);
+    font-weight: bold;
+    line-height: 180%;
+}
+
+.plans-list-remote .plans-item:nth-of-type(2) h4 {
+    color: #71B610;
+}
+
+.plans-list-remote .plans-item:last-of-type h4 {
+    color: #077687;
+}
+
+.detail {
+    font-weight: bold;
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    line-height: 160%;
+    text-align: justify;
+}
+
+
 
 /* ------------------------------------- */
-/* アコーディオン */
+/* サービスフロー */
 /* ------------------------------------- */
+
+#flow {
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#flow h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+.flow-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.flow-list {
+    list-style: none;
+    margin-inline: 7.395vw;
+}
+
+.flow-item {
+    display: flex;
+    border: 3px solid var(--fontColor);
+}
+
+.flow-item span {
+    display: flex;
+    align-items: center;
+    padding: 3.4375vw 16px;
+    font-size: clamp(0.813rem, 0.282rem + 2.27vw, 3rem);
+    border-right: 3px solid var(--fontColor);
+}
+
+.flow-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: clamp(1rem, 0.757rem + 1.04vw, 2rem) clamp(0.625rem, -0.073rem + 2.98vw, 3.5rem);
+}
+
+.flow-container h3 {
+    font-weight: bold;
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+}
+
+.flow-container p {
+    font-size: clamp(1rem, 0.879rem + 0.52vw, 1.5rem);
+    line-height: 180%;
+    text-align: justify;
+    letter-spacing: 0.08em;
+}
+
+.w-arrow {
+    width: 3.75vw;
+    margin: 0 auto;
+}
+
+
+
+/* ------------------------------------- */
+/* Q&A */
+/* ------------------------------------- */
+
+#qa{
+    width: 100%;
+    padding-inline: 6.25vw;
+}
+
+#qa h2 {
+    border: 3px solid var(--fontColor);
+    padding-block: 48px;
+}
+
+/* アコーディオン */
 
 .acd-check{
     display: none;
@@ -633,7 +942,6 @@ h2 {
     box-sizing: border-box;
     content: '+';
     display: block;
-    font-family: "Font Awesome 5 Free";
     height: 44px;
     padding: 10px 20px;
     position: absolute;
@@ -658,5 +966,5 @@ h2 {
     visibility: visible;
 }
 .acd-content p{
-  margin:0;
+    margin:0;
 }
