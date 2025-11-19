@@ -45,10 +45,27 @@ document.addEventListener('DOMContentLoaded', function() {
 /* ------------------------------------- */
 /* スライダー */
 /* ------------------------------------- */
-$(function () {
-    $(".test-slick").slick({
-        autoplay: true, 
-        slidesToShow: 2,
-        speeds: 6000,
+
+$(document).ready(function(){
+    $('.test-slick').slick({
+      // 基本設定 (デスクトップなど、デフォルトの表示)
+        autoplay: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3, // デスクトップの表示に合わせて調整
+        slidesToScroll: 1,
+
+        //レスポンシブ設定
+        responsive: [
+            {
+                breakpoint: 960, // スマートフォンやタブレットのブレイクポイント
+                settings: {
+                    // **スライドの表示枚数を1枚に設定**
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false, 
+                }
+            }
+        ]
     });
 });

@@ -40,32 +40,36 @@
     </header>
 
     <main>
-        <section id="main-visual" class="grid-container">
-            <div class="grid-items1">
-                <div class="main-visual-image">
-                    <img src="./assets/images/UpgradeYourWelfare.png" alt="UpgradeYourWelfare">
+        <section id="main-visual">
+            <div class="grid-container">
+                <div class="grid-items1">
+                    <div class="main-visual-image">
+                        <img src="./assets/images/UpgradeYourWelfare.png" alt="UpgradeYourWelfare">
+                    </div>
                 </div>
-            </div>
-            
-            <div class="main-visual-text grid-items2">
-                <h2>
-                    <span>リモート導入支援</span>
-                    <img class="cross" src="./assets/images/cross.png" alt="">
-                    <span>人材採用支援</span>
-                </h2>
-                <p>福祉専門のリモート導入支援と人材採用支援で、未来の法人運営を実現します。</p>
-                <button class="primary-button"><a href="#contact">Contact</a></button>
-            </div>
-
-            <div class="grid-items3">
-                <video src="" muted></video>
-                <img class="message" src="./assets/images/can-i-remote.png" alt="リモートしない？" width="200px">
+                
+                <div class="main-visual-text grid-items2">
+                    <div class="text-wrapper">
+                        <h2>
+                            <span>リモート導入支援</span>
+                            <img class="cross" src="./assets/images/cross.png" alt="">
+                            <span>人材採用支援</span>
+                        </h2>
+                        <p>福祉専門のリモート導入支援と人材採用支援で、未来の法人運営を実現します。</p>
+                    </div>
+                    <button class="primary-button"><a href="#contact">Contact</a></button>
+                </div>
+    
+                <div class="grid-items3">
+                    <video src="" muted></video>
+                    <img class="message" src="./assets/images/can-i-remote.png" alt="リモートしない？" width="200px">
+                </div>
             </div>
         </section>
 
         <section id="social-issue">
+            <h2>福祉業界の課題</h2>
             <div class="issue-wrapper">
-                <h2>福祉業界の課題</h2>
                 <div class="issue-container">
                     <div class="issue-image"><img src="./assets/images/social-issues_visual.jpg" alt="話をする職員"></div>
                     <div class="issue-text">
@@ -358,94 +362,122 @@
 
         <section id="qa">
             <h2>よくある質問</h2>
-            <input id="acd1" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd1">リモートでのコミュニケーションが希薄になりませんか</label>
-            <div class="acd-content">
-                <p>単にツールを提供するだけでなく、オンラインでも信頼関係を築くためのノウハウもご提供しています。例えば、定期的なオンラインミーティングを支援したり、チャットツールを活用した気軽な情報共有の方法をご提案したりすることで、対面での関わりを補完し、チームの一体感を高めるお手伝いをします。</p>
-            </div>
+            <div class="acd-container">
+                <div class="acd-item">
+                    <input id="acd1" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd1">リモートでのコミュニケーションが希薄になりませんか</label>
+                    <div class="acd-content">
+                        <p>単にツールを提供するだけでなく、オンラインでも信頼関係を築くためのノウハウもご提供しています。例えば、定期的なオンラインミーティングを支援したり、チャットツールを活用した気軽な情報共有の方法をご提案したりすることで、対面での関わりを補完し、チームの一体感を高めるお手伝いをします。</p>
+                    </div>
+                </div>
 
-            <input id="acd2" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd2">情報漏洩が心配です。</label>
-            <div class="acd-content">
-                <p>私たちがご提案するプラットフォームは、フォルダひとつ一つに閲覧制限などの制約を設けられますので、ファイル管理についてもサポートいたします。</p>
-            </div>
+                <div class="acd-item">
+                    <input id="acd2" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd2">情報漏洩が心配です。</label>
+                    <div class="acd-content">
+                        <p>私たちがご提案するプラットフォームは、フォルダひとつ一つに閲覧制限などの制約を設けられますので、ファイル管理についてもサポートいたします。</p>
+                    </div>
+                </div>
 
-            <input id="acd3" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd3">新しい働き方への移行で、職員間の摩擦は起きませんか？</label>
-            <div class="acd-content">
-                <p>変化には不安がつきものです。既存の職員の方々への丁寧な説明会や研修をサポートすることで、リモートワークへの理解を深めていただきます。</p>
-            </div>
+                <div class="acd-item">
+                    <input id="acd3" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd3">新しい働き方への移行で、職員間の摩擦は起きませんか？</label>
+                    <div class="acd-content">
+                        <p>変化には不安がつきものです。既存の職員の方々への丁寧な説明会や研修をサポートすることで、リモートワークへの理解を深めていただきます。</p>
+                    </div>
+                </div>
+                
+                <div class="acd-item">
+                    <input id="acd4" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd4">利用者用のPCがないのですが、問題はないでしょうか？</label>
+                    <div class="acd-content">
+                        <p>スマホを利用したプランもご用意してます。また、PCを使用したサービスをお考えの場合、補助金を活用してPCを購入出来る場合がございます。※地域による</p>
+                    </div>
+                </div>
 
-            <input id="acd4" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd4">利用者用のPCがないのですが、問題はないでしょうか？</label>
-            <div class="acd-content">
-                <p>スマホを利用したプランもご用意してます。また、PCを使用したサービスをお考えの場合、補助金を活用してPCを購入出来る場合がございます。※地域による</p>
-            </div>
+                <div class="acd-item">
+                    <input id="acd5" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd5">利用者さんの仕事・作業が確保できるか心配。</label>
+                    <div class="acd-content">
+                        <p>支援対象者の方のニーズに合わせた業務内容を検討したうえで、受注のコツをお伝えすることが可能です。</p>
+                    </div>
+                </div>
 
-            <input id="acd5" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd5">利用者さんの仕事・作業が確保できるか心配。</label>
-            <div class="acd-content">
-                <p>支援対象者の方のニーズに合わせた業務内容を検討したうえで、受注のコツをお伝えすることが可能です。</p>
+                <div class="acd-item">
+                    <input id="acd6" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd6">個別支援計画の策定やモニタリングをどのようにすればいいかわからない。</label>
+                    <div class="acd-content">
+                        <p>内容は通所時と相違はありません。リモートツールを用いた効率化をご提案可能です。</p>
+                    </div>
+                </div>
+                
+                <div class="acd-item">
+                    <input id="acd7" class="acd-check" type="checkbox">
+                    <label class="acd-label" for="acd7">支給決定時に必要な手続きや、書類の作成方法が分からない。</label>
+                    <div class="acd-content">
+                        <p>各市町村によって違いがございますので、市町村にお問い合わせください。</p>
+                    </div>
+                </div>
             </div>
-
-            <input id="acd6" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd6">個別支援計画の策定やモニタリングをどのようにすればいいかわからない。</label>
-            <div class="acd-content">
-                <p>内容は通所時と相違はありません。リモートツールを用いた効率化をご提案可能です。</p>
-            </div>
-
-            <input id="acd7" class="acd-check" type="checkbox">
-            <label class="acd-label" for="acd7">支給決定時に必要な手続きや、書類の作成方法が分からない。</label>
-            <div class="acd-content">
-                <p>各市町村によって違いがございますので、市町村にお問い合わせください。</p>
-            </div>
+            <button class="primary-button"><a href="">Contact</a></button>
         </section>
 
         <!-- フォーム -->
 
         <section id="contact-form">
+            <h2>お問い合わせフォーム</h2>
             <form action="">
 
                 <div class="contact-form-item">
                     <label for="name">法人名</label>
-                    <input type="text" name="name" id="name" required>
+                    <input type="text" name="name" id="name" placeholder="法人名" required>
                 </div>
 
                 <div class="contact-form-item">
                     <label for="person">ご担当者様名</label>
-                    <input type="text" name="person" id="person" required>
+                    <input type="text" name="person" id="person" placeholder="ご担当者様名" required>
                 </div>
 
                 <div class="contact-form-item">
                     <label for="email">メールアドレス</label>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email" placeholder="メールアドレス" required>
                 </div>
 
                 <div class="contact-form-item">
                     <label for="phone">電話番号</label>
-                    <input type="number" name="phone" id="phone" >
+                    <input type="number" name="phone" id="phone" placeholder="電話番号" >
                 </div>
 
                 <div class="contact-form-item">
                     <label for="inquiry">お問い合わせ内容</label>
-                    <textarea name="inquiry" id="inquiry" required></textarea>
+                    <textarea name="inquiry" id="inquiry" placeholder="お問い合わせ内容" required></textarea>
                 </div>
 
                 <div class="contact-form-policy">
-                    <div><a href="">プライバシーポリシー</a></div>
-                    <div><input type="checkbox">プライバシーポリシーに同意する</div>
+                    <div class="policy"><a href="">プライバシーポリシー</a></div>
+                    <div class="agree"><input type="checkbox">プライバシーポリシーに同意する</div>
                 </div>
 
-                <input type="submit" value="送信する">
+                <input class="primary-button" type="submit" value="送信する">
             </form>
         </section>
 
         <!-- フッター -->
 
         <footer>
-            <div><a href="#"><img src="./assets/images/logo_rimotto.png" alt="ロゴ"></a></div>
-            <small>©2025 社会福祉法人若竹会</small>
-            <button><a href="#">トップ</a></button>
+
+            <div class="footer-main">
+                <div class="footer-logo"><img src="./assets/images/logo_rimotto.png" alt="ロゴ"></div>
+                <div class="footer-copy">©2025 社会福祉法人若竹会</div>
+                <div class="footer-button"><button class="primary-button"><a href="#">トップ</a></button></div>
+            </div>
+                
+
+            <div class="footer-logo">
+                
+                <small></small>
+            </div>
+            
         </footer>
     </main>
 
