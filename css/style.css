@@ -236,6 +236,8 @@ h2 {
     align-items: center;
     gap: clamp(0.25rem, 0.1286rem + 0.5178vw, 0.75rem);
     font-size: clamp(1rem, 0.5146rem + 2.0712vw, 3rem);
+    border: none;
+    margin-block: 0;
 }
 
 .cross {
@@ -260,7 +262,7 @@ h2 {
 .grid-items3 {
     grid-column: span 12 / span 12;
     grid-row-start: 2;
-    margin-top: -10vh;
+    margin-top: -5vh;
     position: relative;
 }
 
@@ -758,6 +760,10 @@ h2 {
     letter-spacing: 0.08em;
 }
 
+#results-section .primary-button {
+    border-top: 3px solid var(--fontColor);
+}
+
 
 @media (max-width: 960px) {
     .results-item {
@@ -901,22 +907,20 @@ h2 {
     }
 
     .slick-list {
-        margin: 0;
-    }
-
-    .slick-slide {
-        width: calc(100% - 6.25vw - 10vw) !important;
+        margin-right: -6.25vw;
+        margin-left: -6.25vw;
+        padding-right: 6.25vw;
+        transform: none !important;
     }
 
     .slick-track {
-        gap: 0;
+        gap: 16px;
     }
 
     /* voice cards */
     .test-slick__item {
-        width: calc(100% - 20px) !important;;
-        margin: 0; /* マージンをリセット */
-        padding: 10px;
+        width: 85% !important;
+        margin-right: 4.375vw;
     }
 }
 
@@ -1039,6 +1043,7 @@ h2 {
 .plans-list-remote {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 2.656vw;
     margin-inline: 5.72vw;
     margin-bottom: 6.875vw;
@@ -1053,9 +1058,8 @@ h2 {
     text-align: center;
 }
 
-.plans-list-remote .plans-item:nth-of-type(2) {
-    border: 3px solid #71B610;
-    box-shadow: 3px 3px 15px rgb(155, 236, 41, 0.2);
+.plans-list-remote .plans-item:nth-of-type(2) .plans-item-title {
+    border-bottom: 3px solid #71B610;
 }
 
 .plans-list-remote .plans-item:last-of-type {
@@ -1102,6 +1106,59 @@ h2 {
     text-align: justify;
 }
 
+#plans .primary-button {
+    border-top: 3px solid var(--fontColor);
+}
+
+
+@media (max-width: 960px) {
+    /* 人材採用プランリスト */
+    #plans h2 {
+        padding-block: 16px;
+    }
+
+    .plans-list-recruit {
+        justify-content: center;
+        margin-inline: 0;
+        gap: 32px;
+    }
+
+    .plans-list-recruit .plans-item {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .plans-list-recruit .plans-item:nth-of-type(2) {
+        transform: scale(1);
+    }
+
+    .plans-list-recruit .recommend {
+        margin-block: 32px;
+    }
+
+    .plan-point {
+        width: 100%;
+    }
+    
+    /* リモート導入支援プランリスト */
+
+    .plans-list-remote {
+        justify-content: center;
+        margin-inline: 0;
+        gap: 32px;
+        margin-bottom: 56px;
+    }
+
+    .plans-list-remote .plans-item {
+        padding: 40px 16px 40px;
+        width: 100%;
+    }
+
+    #plans .primary-button {
+        padding-block: 16px;
+    }
+}
+
 
 
 /* ------------------------------------- */
@@ -1115,7 +1172,6 @@ h2 {
 
 #flow h2 {
     border: 3px solid var(--fontColor);
-    padding-block: 48px;
 }
 
 .flow-list {
@@ -1168,6 +1224,24 @@ h2 {
     margin: 0 auto;
 }
 
+@media (max-width: 960px) {
+    .flow-list {
+        margin-inline: 0;
+    }
+
+    #flow h2 br {
+        display: none;
+    }
+
+    .flow-item span {
+        padding: 10px;
+    }
+
+    .flow-container p {
+        line-height: 160%;
+    }
+}
+
 
 
 /* ------------------------------------- */
@@ -1181,7 +1255,6 @@ h2 {
 
 #qa h2 {
     border: 3px solid var(--fontColor);
-    padding-block: 48px;
 }
 
 .acd-container {
@@ -1268,6 +1341,32 @@ h2 {
     border-top: 3px solid var(--fontColor);
 }
 
+@media (max-width: 960px) {
+    .acd-container {
+        width: 100%;
+    }
+
+    .acd-label {
+        padding: 20px 0 20px 10px;
+    }
+
+    .acd-content p {
+        padding: 10px;
+    }
+
+    .acd-label span {
+        display: block;
+        width: 80%;
+    }
+
+    .acd-label:after {
+        max-width: 48px;
+    }
+
+    #qa .primary-button {
+        padding-block: 16px;
+    }
+}
 
 
 /* ------------------------------------- */
@@ -1281,7 +1380,6 @@ h2 {
 
 #contact-form h2 {
     border: 3px solid var(--fontColor);
-    padding-block: 48px;
 }
 
 form {
@@ -1374,6 +1472,57 @@ form > .primary-button {
 }
 
 
+@media (max-width: 960px) {
+    form {
+        width: 100%;
+        gap: 24px;
+    }
+
+    .contact-form-item:not(:first-of-type) {
+        border-top: 3px solid var(--fontColor);
+    }
+
+    .contact-form-item label {
+        display: none;
+    }
+
+    .contact-form-item input::placeholder {
+        color: #C8C8C8;
+    }
+    
+    .contact-form-item input::-ms-input-placeholder {
+        color: #C8C8C8;
+    }
+
+    .contact-form-item textarea::placeholder {
+        color: #C8C8C8;
+    }
+    
+    .contact-form-item textarea::-ms-input-placeholder {
+        color: #C8C8C8;
+    }
+
+    .contact-form-policy {
+        flex-direction: column;
+        align-items: center;
+        border: none;
+    }
+
+    .policy {
+        border: none;
+    }
+
+    .policy, .agree {
+        width: 100%;
+    }
+    
+    form > .primary-button {
+        padding-block: 16px;
+        border-top: 3px solid var(--fontColor);
+    }
+}
+
+
 
 /* ------------------------------------- */
 /* フッター */
@@ -1394,7 +1543,7 @@ footer {
     grid-template-rows: repeat(1, 1fr);
     gap: 32px;
 }
-    
+
 .footer-logo {
     display: flex;
     align-items: center;
@@ -1428,4 +1577,47 @@ footer {
     font-weight: bold;
     aspect-ratio: 8.75vw;
     border-top: 3px solid var(--fontColor);
+}
+
+
+@media (max-width: 960px) {
+    footer {
+        padding-block: 56px 16px;
+    }
+
+    .footer-main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        row-gap: 40px;
+    }
+
+    .footer-logo {
+        grid-column: span 4 / span 4;
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .footer-logo img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer-copy {
+        grid-column: span 4 / span 4;
+        grid-column-start: 1;
+        grid-row-start: 3;
+        align-self: start;
+        height: fit-content;
+    }
+    
+    .footer-button {
+        grid-column: span 4 / span 4;
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
+
+    .footer-button > .primary-button {
+        padding-block: 16px;
+    }
 }
