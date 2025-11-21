@@ -11,6 +11,10 @@
     --fontColor: #333;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 
     "ヒラギノ角ゴ ProN", 
@@ -24,10 +28,25 @@ section {
     margin-bottom: clamp(6.5rem, 5.0437rem + 6.2136vw, 12.5rem);
 }
 
+.primary-button {
+    position: relative;
+}
+
+.primary-button a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+}
+
 a {
     text-decoration: none;
     color: var(--fontColor);
 }
+
+
 
 h2 {
     display: block;
@@ -117,16 +136,20 @@ h2 {
     top: 0;
     right: -300px; 
     width: 300px;
-    height: 100vh;
+    height: fit-content;
     background-color: var(--mainColor);
-    padding-top: 60px;
-    transition: right 0.4s ease-in-out;
+    padding-top: 32px;
+    opacity: 0;
+    visibility: hidden;
     z-index: 150;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .nav-menu.active {
-    right: 0;
+    top: 12%;
+    right: 9%;
+    opacity: 1;
+    visibility: visible;
 }
 
 .nav-menu ul {
@@ -136,6 +159,7 @@ h2 {
 
 .nav-menu ul li {
     font-weight: bold;
+    margin-bottom: 24px;
 }
 
 .nav-menu ul li button {
@@ -154,7 +178,6 @@ h2 {
     color: var(--fontColor);
     font-size: 1.1rem;
     display: block;
-    padding: 5px 0;
 }
 
 /* メインコンテンツ (開閉時の背景効果用) */
@@ -182,6 +205,13 @@ h2 {
 
     .line {
         height: 2px;
+    }
+
+    .nav-menu.active {
+        top: 9%;
+        right: 9%;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -255,6 +285,7 @@ h2 {
     background-color: var(--mainColor);
     padding-block: 16px;
     border-top: 3px solid var(--fontColor);
+    z-index: 50;
 }
 
 /* grid-items3 */
@@ -361,6 +392,10 @@ h2 {
 #social-issue {
     width: 100%;
     padding-inline: 6.25vw;
+}
+
+#social-issue h2 {
+    margin-bottom: 0;
 }
 
 .issue-wrapper {
@@ -949,15 +984,14 @@ h2 {
 
 .plans-list-recruit {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 2.656vw;
-    margin-inline: 5.72vw;
     margin-bottom: 6.875vw;
 }
 
 .plans-list-recruit .plans-item {
-    width: 22.08vw;
+    width: 29.08vw;
     max-width: 424px;
     min-width: 347px;
     border: 3px solid var(--fontColor);
@@ -967,7 +1001,6 @@ h2 {
 }
 
 .plans-list-recruit .plans-item:nth-of-type(2) {
-    transform: scale(1.2);
     border: 3px solid #9BEC29;
     box-shadow: 3px 3px 15px rgb(155, 236, 41, 0.2);
 }
@@ -1042,20 +1075,24 @@ h2 {
 
 .plans-list-remote {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 2.656vw;
-    margin-inline: 5.72vw;
+    gap: 32px;
     margin-bottom: 6.875vw;
 }
 
 .plans-list-remote .plans-item {
-    width: calc(100% / 3);
+    width: 29.08vw;
     max-width: 424px;
     border: 3px solid var(--fontColor);
     padding: 64px 24px 40px;
     list-style: none;
     text-align: center;
+}
+
+.plans-list-remote .plans-item:nth-of-type(2) {
+    border: 3px solid #71B610;
+    box-shadow: 3px 3px 15px rgb(155, 236, 41, 0.2)
 }
 
 .plans-list-remote .plans-item:nth-of-type(2) .plans-item-title {
@@ -1077,11 +1114,11 @@ h2 {
     margin-bottom: 24px;
 }
 
-.plans-item-title:nth-of-type(2) {
+.plans-list-remote .plans-item-title:nth-of-type(2) .plans-item-title {
     border-bottom: 3px solid #71B610;
 }
 
-.plans-item-title:last-of-type {
+.plans-list-remote .plans-item:last-of-type .plans-item-title {
     border-bottom: 3px solid #077687;
 }
 
@@ -1125,7 +1162,6 @@ h2 {
 
     .plans-list-recruit .plans-item {
         width: 100%;
-        min-width: 100%;
     }
 
     .plans-list-recruit .plans-item:nth-of-type(2) {
@@ -1145,7 +1181,6 @@ h2 {
     .plans-list-remote {
         justify-content: center;
         margin-inline: 0;
-        gap: 32px;
         margin-bottom: 56px;
     }
 
